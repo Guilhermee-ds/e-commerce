@@ -1,7 +1,7 @@
 //colect item
  export const catalog = [
     {
-        id: 1,
+        id: "1",
         name: "Iphone 13 Green",
         mark: "Apple",
         price: 4000,
@@ -10,7 +10,7 @@
         apple: true,
     },
     {
-        id: 2,
+        id: "2",
         name: "Iphone 13 Midnight",
         mark: "Apple",
         price: 4000,
@@ -19,7 +19,7 @@
         apple: true,
     },
     {
-        id: 3,
+        id: "3",
         name: "Iphone 13 Pink",
         mark: "Apple",
         price: 4000,
@@ -28,7 +28,7 @@
         apple: true,
     },
     {
-        id: 4,
+        id: "4",
         name: "Iphone 13 Red",
         mark: "Apple",
         price: 4000,
@@ -37,7 +37,7 @@
         apple: true,
     },
     {
-        id: 5,
+        id: "5",
         name: "Iphone 14 Pro Max Gold",
         mark: "Apple",
         price: 4000,
@@ -46,7 +46,7 @@
         apple: true,
     },
     {
-        id: 6,
+        id: "6",
         name: "Iphone 14 Pro Max Night",
         mark: "Apple",
         price: 4000,
@@ -55,7 +55,7 @@
         apple: true,
     },
     {
-        id: 7,
+        id: "7",
         name: "Iphone 14 pro max White",
         mark: "Apple",
         price: 4000,
@@ -65,7 +65,7 @@
     },
     
     {
-        id: 8,
+        id: "8",
         name: "Iphone 11 Black",
         mark: "Samsung",
         price: 4000,
@@ -74,7 +74,7 @@
         apple: true,
     },
     {
-        id: 9,
+        id: "9",
         name: "Iphone 11 Red",
         mark: "Samsung",
         price: 4000,
@@ -83,7 +83,7 @@
         apple: true,
     },
     {
-        id: 10,
+        id: "10",
         name: "Iphone 11 white",
         mark: "Samsung",
         price: 4000,
@@ -93,7 +93,7 @@
     },
 
     {
-        id: 11,
+        id: "11",
         name: "Samsung s22 White",
         mark: "Samsung",
         price: 4000,
@@ -104,7 +104,7 @@
 
 
     {
-        id: 12,
+        id: "12",
         name: "Samsung S23 Gold",
         mark: "Samsung",
         price: 4000,
@@ -113,7 +113,7 @@
         apple: false,
     },
     {
-        id: 13,
+        id: "13",
         name: "Samsung S23 plus Black",
         mark: "Samsung",
         price: 4000,
@@ -122,7 +122,7 @@
         apple: false,
     },
     {
-        id: 14,
+        id: "14",
         name: "Samsung S23 plus gold",
         mark: "Samsung",
         price: 4000,
@@ -131,7 +131,7 @@
         apple: false,
     },
     {
-        id: 15,
+        id: "15",
         name: "Samsung S23 plus violet",
         mark: "Samsung",
         price: 4000,
@@ -140,7 +140,7 @@
         apple: false,
     },
     {
-        id: 16,
+        id: "16",
         name: "Samsung s23 Ultra Black",
         mark: "Samsung",
         price: 4000,
@@ -149,7 +149,7 @@
         apple: false,
     },
     {
-        id: 17,
+        id: "17",
         name: "Samsung S23 Ultra Gold",
         mark: "Samsung",
         price: 4000,
@@ -158,7 +158,7 @@
         apple: false,
     },
     {
-        id: 18,
+        id: "18",
         name: "Samsung s22 Ultra Black",
         mark: "Apple",
         price: 4000,
