@@ -9,9 +9,10 @@
 </head>
 <body>
   <!-- config car -->
-  <section id="cart" class="fixed top-0 right-0 bg-cyan-950 h-screen w-[360px] text-zinc-200">
+  <section id="cart" class="fixed top-0 right-[0px] bg-cyan-950 h-screen w-[360px] text-zinc-200">
     <div id="header-car" class="flex justify-between m-4">
       <p>my shopping cart</p>
+      <!--close car button-->
       <button id="closed-car">
         <i class="fa-solid fa-circle-xmark"></i>
       </button>
@@ -35,7 +36,7 @@
     />
     <!--config buttton--->
     <div class="text-zinc-200 flex gap-3 items-end mx-4">
-      <button><i class="fa-solid fa-cart-shopping"></i></button>
+      <button id="open-car"><i class="fa-solid fa-cart-shopping"></i></button>
       <button><i class="fa-solid fa-user"></i></button>
     </div>
     
@@ -46,6 +47,6 @@
       
     </section>
   </main>
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+import { initcart } from "./src/menu-car";
 //colect item
 const catalog = [
 {
@@ -149,7 +150,7 @@ const catalog = [
 
  //run intens in my list and add to page
  for ( const productCatalog of catalog ) {
-    const cardProduct = ` <div class="border-solid border-2 border-sky-500 w-52 m-2" id="card-product-${productCatalog.id}">
+    const cardProduct = ` <div class="border-solid border-2 border-sky-500 w-80 m-4 " id="card-product-${productCatalog.id}">
     <img 
     src="assets/img/${productCatalog.nameFileImage}" 
     alt="Product 1 ecommerc"
@@ -164,4 +165,4 @@ const catalog = [
     document.getElementById("container-product").innerHTML += cardProduct;
  }
 
-//input itens in field scrolls through the array and collects item 4
+initcart ();
