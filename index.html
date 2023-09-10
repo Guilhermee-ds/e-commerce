@@ -13,7 +13,7 @@
 
 <body class="bg-stone-200 flex flex-col">
   <!-- config car -->
-  <section id="cart" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-zinc-200 z-50">
+  <section id="cart" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-zinc-200 z-50 duration-200 border-l border-zinc-200 p-6 flex flex-col justify-between">
     <div id="header-car" class="flex justify-between m-4">
       <p>my shopping cart</p>
       <!--close car button-->
@@ -23,19 +23,14 @@
     </div>
 
     <!--  products enter in car-->
-    <section id="product-car">
-      <p>iphone 13</p>
-      <p>iphone 14</p>
-      <p>Samsung s23 black</p>
-      
-    </section>
+    <section id="product-car" class="h-3/5"></section>
   <!--config price in cars-->
     <p id="price-all">$2000</p>
     <button class="bg-slate-200 text-slate-900 p-1">Checkout</button>
   </section>
 
   <!--config header and img--->
-  <header class="flex text-xl bg-slate-950 px-8 py-4 flex justify-between sticky top-0 shadow-lg shadow-indigo-950">
+  <header class="flex text-xl bg-slate-950 px-8 py-4 flex justify-between sticky top-0 shadow-lg shadow-indigo-950 z-10">
     <!--  space -->
     <img class="h-16" src="assets/img/logo.png" alt="my E-commerce logo " />
     <!--config buttton--->
@@ -53,7 +48,7 @@
   </header>
   <!--config itens in my store--->
   <main>
-    <section id="container-product" class=" flex flex-wrap p-10 justify-center gap-10"></section>
+    <section id="container-product" class=" flex flex-wrap p-10 justify-center gap-10 justify-items-center"></section>
 
   </main>
   <script type="module" src="main.js"></script>
