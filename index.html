@@ -5,11 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <header></header>
+  <!-- config car -->
+  <section id="cart" class="fixed top-0 right-0 bg-cyan-950 h-screen w-[360px] text-zinc-200">
+    <div id="header-car" class="flex justify-between m-4">
+      <p>my shopping cart</p>
+      <button id="closed-car">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+    <!--  products enter in car-->
+    <section id="product-car">
+      <p>iphone 13</p>
+      <p>iphone 14</p>
+      <p>Samsung s23 black</p>
+    <!--config price in cars-->
+    </section>
+    <p id="price-all">$2000</p>
+    <button class="bg-slate-200 text-slate-900 p-1">Checkout</button>
+  </section>
+  <!--config header and img--->
+  <header class="flex bg-cyan-950 p-2 flex justify-between ">
+    <!--  space -->
+    <img class="h-16"  
+    src="assets/img/logo.png" 
+    alt="my E-commerce logo "
+    />
+    <!--config buttton--->
+    <div class="text-zinc-200 flex gap-3 items-end mx-4">
+      <button><i class="fa-solid fa-cart-shopping"></i></button>
+      <button><i class="fa-solid fa-user"></i></button>
+    </div>
+    
+  </header>
+      <!--config itens in my store--->
   <main>
-    <section id="container-product">
+    <section id="container-product" class=" flex flex-wrap" >
       
     </section>
   </main>
