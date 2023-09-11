@@ -13,7 +13,8 @@
 
 <body class="bg-stone-200 flex flex-col">
   <!-- config car -->
-  <section id="cart" class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-zinc-200 z-50 duration-200 border-l border-zinc-200 p-6 flex flex-col justify-between">
+  <section id="cart"
+    class="fixed top-0 right-[-360px] bg-slate-950 h-screen w-[360px] text-zinc-200 z-50 duration-200 border-l border-zinc-200 p-6 flex flex-col justify-between">
     <div id="header-car" class="flex justify-between m-4">
       <p>my shopping cart</p>
       <!--close car button-->
@@ -24,13 +25,14 @@
 
     <!--  products enter in car-->
     <section id="product-car" class="h-3/5 overflow-y-auto flex flex-col gap-3"></section>
-  <!--config price in cars-->
-  <p id="price-all">all: $0</p>
+    <!--config price in cars-->
+    <p id="price-all" class="bg-slate-200 text-green-700 rounded-sm pl-5">Total: $0</p>
     <button class="bg-slate-200 text-slate-900 p-1">Checkout</button>
   </section>
 
   <!--config header and img--->
-  <header class="flex text-xl bg-slate-950 px-8 py-4 flex justify-between sticky top-0 shadow-lg shadow-indigo-950 z-10">
+  <header
+    class="flex text-xl bg-slate-950 px-8 py-4 flex justify-between sticky top-0 shadow-lg shadow-indigo-950 z-10">
     <!--  space -->
     <img class="h-16" src="assets/img/logo.png" alt="my E-commerce logo " />
     <!--config buttton--->
@@ -40,14 +42,43 @@
         <i class="fa-solid fa-cart-shopping"></i>
       </button>
       <!--Button user-->
-      <button class="mr-2" >
+      <button class="mr-2">
         <i class="fa-solid fa-user"></i>
       </button>
     </div>
 
   </header>
   <!--config itens in my store--->
-  <main>
+  <main class="flex flex-col items-center">
+    <section id="filter" class="p-20 flex ">
+
+      <div class="px-2">
+        <input id="show-all" 
+        type="radio" 
+        name="filter"
+        class="peer hidden" checked>
+        <label for="show-all" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer font-bold">All items</label>
+      </div>
+
+      <div class="px-2">
+        <input id="show-apple" 
+        type="radio" 
+        name= "filter"
+        class="peer hidden">
+        <label for="show-apple" 
+        class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer font-bold">Apple</label>
+      </div>
+
+      <div class="px-2">
+        <input id="show-samsung" 
+        type="radio" 
+        name= "filter"
+        class="peer hidden">
+        <label for="show-samsung" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer font-bold">Samsung</label>
+      </div>
+
+
+    </section>
     <section id="container-product" class=" flex flex-wrap p-10 justify-center gap-10 justify-items-center"></section>
 
   </main>

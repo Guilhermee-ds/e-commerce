@@ -6,7 +6,6 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'iphone-13-green.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -15,7 +14,6 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'iphone-13-night.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -24,7 +22,6 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'iphone-13-pink.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -33,7 +30,6 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'iphone-13-red.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -42,7 +38,6 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'iphone-14-gold.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -51,7 +46,6 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'iphone-14-night.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -60,7 +54,6 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'iphone-14-white.jpg',
-        samsung: false,
         apple: true,
     },
     
@@ -70,7 +63,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'iphone-11-black.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -79,7 +71,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'iphone-11-red.jpg',
-        samsung: false,
         apple: true,
     },
     {
@@ -88,7 +79,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'iphone-11-white.jpg',
-        samsung: false,
         apple: true,
     },
 
@@ -98,7 +88,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'Samsung-s22-white.jpg',
-        samsung: true,
         apple: false,
     },
 
@@ -109,7 +98,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'Samsung-s23.jpg',
-        samsung: true,
         apple: false,
     },
     {
@@ -118,7 +106,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'Samsung-s23-plus-black.jpg',
-        samsung: true,
         apple: false,
     },
     {
@@ -127,7 +114,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'Samsung-s23-plus-gold.jpg',
-        samsung: true,
         apple: false,
     },
     {
@@ -136,7 +122,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'Samsung-s23-plus-violet.jpg',
-        samsung: true,
         apple: false,
     },
     {
@@ -145,7 +130,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'Samsung-s23-ultra-black.jpg',
-        samsung: true,
         apple: false,
     },
     {
@@ -154,7 +138,6 @@
         mark: "Samsung",
         price: 4000,
         nameFileImage: 'Samsung-s23-ultra-gold.jpg',
-        samsung: true,
         apple: false,
     },
     {
@@ -163,9 +146,18 @@
         mark: "Apple",
         price: 4000,
         nameFileImage: 'Samsung-s22-ultra-black.jpg',
-        samsung: true,
         apple: false,
     },
     
 
 ];
+
+//save cart
+export function saveLocalStorage (key,information){
+    localStorage.setItem(key,JSON.stringify(information));
+}
+
+//listen item
+export function listenLocalStorage(Chave){
+      return JSON.parse(localStorage.getItem(Chave));
+}
