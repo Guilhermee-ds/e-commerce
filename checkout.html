@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-stone-200 flex flex-col h-screen">
+
+    <!--config header and img--->
+    <header
+        class="flex text-xl bg-slate-950 px-8 py-4 flex justify-between sticky top-0 shadow-lg shadow-indigo-950 z-10">
+        <!--  space -->
+        <img class="h-12" src="assets/img/logo.png" alt="my E-commerce logo " />
+    </header>
+    <form class="flex w-100 px-5 gap-5 py-10 grow">
+        <section id="data-ser" class="w-1/3 bg-white rounded-lg py-5">
+            <p class="mb-5 text-center font-bold">Your Data</p>
+            <div class="flex flex-col px-10 py-3">
+                <label for="name" class="font-bold text-sm mb-2">Name</label>
+                <input type="text" id="name" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                    placeholder="Enter Your Name" required>
+            </div>
+            <div class="flex flex-col px-10 py-3">
+                <label for="email" class="font-bold text-sm mb-2">Email</label>
+                <input type="email" id="email" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                    placeholder="Enter Your Email" required>
+            </div>
+            <div class="flex flex-col px-10 py-3">
+                <label for="phone" class="font-bold text-sm mb-2">Phone</label>
+                <input type="tel" id="phone" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                    placeholder="Enter Your Phone" required>
+            </div>
+        </section>
+        <section id="data-pay" class="w-1/3 bg-white rounded-lg py-5">
+            <p class="mb-5 text-center font-bold">Payment and Delivery</p>
+            <div class="flex flex-col px-10 py-3">
+                <label for="number-card" class="font-bold text-sm mb-2">Card number</label>
+                <input type="number" id="number-card" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                    placeholder="Enter Your Number Card" required>
+            </div>
+            <div class="flex">
+                <div class="flex flex-col px-10 py-3 w-1/2">
+                    <label for="cvv" class="font-bold text-sm mb-2">CVV</label>
+                    <input type="number" id="cvv" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                        placeholder="Enter Your CVV" required>
+                </div>
+                <div class="flex flex-col px-10 py-3 w-1/2">
+                    <label for="expiry-date" class="font-bold text-sm mb-2">Expiry Date</label>
+                    <input type="number" id="expiry-date" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                        placeholder="Enter Your Expiry Data" required>
+                </div>
+            </div>
+            </div>
+            <div class="flex flex-col px-10 py-3">
+                <label for="cep" class="font-bold text-sm mb-2">CEP</label>
+                <input type="number" id="cep" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                    placeholder="Enter Your CEP" required>
+            </div>
+            <div class="flex flex-col px-10 py-3">
+                <label for="andress" class="font-bold text-sm mb-2">Andress</label>
+                <input type="text" id="andress" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                    placeholder="Enter Your Andress" required>
+            </div>
+
+            </div>
+            <div class="flex">
+                <div class="flex flex-col px-10 py-3 w-1/2">
+                    <label for="number" class="font-bold text-sm mb-2">Number</label>
+                    <input type="number" id="number" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                        placeholder="Your House Number" required>
+                </div>
+                <div class="flex flex-col px-10 py-3 w-1/2">
+                    <label for="Complement" class="font-bold text-sm mb-2">Complement</label>
+                    <input type="number" id="Complement" class="rounded-sm px-2 border-2 border-slate-200 py-1"
+                        placeholder="Complementing Your Home" required>
+                </div>
+            </div>
+            </div>
+        </section>
+        </section>
+        <section id="products-checkout" class="w-1/3 bg-white rounded-lg py-5">
+            <section id="container-products-checkout"
+             class="h-3/4 overflow-y-auto"></section>
+            <section id="celula-checkout"></section>
+        </section>
+    </form>
+    <script src="checkout.js" type="module"></script>
+</body>
+
+</html>
