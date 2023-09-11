@@ -1,61 +1,86 @@
 import { catalog } from "./ultility";
 
-const idsProductCartHowQuantity = {
-}
+const idsProductCartHowQuantity = {};
 
-//init  open the car
+// Inicializa o carrinho
 function openCar() {
     document.getElementById("cart").classList.add("right-[0px]");
     document.getElementById("cart").classList.remove("right-[-360px]");
 }
-//close the car
+
+// Fecha o carrinho
 function closeCar() {
     document.getElementById("cart").classList.remove("right-[0px]");
     document.getElementById("cart").classList.add("right-[-360px]");
 }
 
-//init the car
+// Inicializa o carrinho
 export function initcart() {
     const buttonCloseCar = document.getElementById("closed-car");
     const buttonOpenCar = document.getElementById("open-car");
-    //add event in butto the close cart
+    // Adiciona eventos aos botões para fechar e abrir o carrinho
     buttonCloseCar.addEventListener("click", closeCar);
     buttonOpenCar.addEventListener("click", openCar);
 }
 
-//remove when it reaches 0
+// Remove um item do carrinho
 function removecar(idProduct) {
     delete idsProductCartHowQuantity[idProduct];
+    renderProductCart();
 }
 
-//add quantity
-function addquantityProduct(idProduct){
-    idsProductCartHowQuantity[idProduct] ++;
+// Adiciona quantidade de um produto no carrinho
+function addquantityProduct(idProduct) {
+    if (idsProductCartHowQuantity[idProduct] === undefined) {
+        idsProductCartHowQuantity[idProduct] = 0; // Inicializa a quantidade como 0 quando adiciona um novo item.
+    }
+    
+    const product = catalog.find(p => p.id === idProduct);
+    if (product) {
+        if (idsProductCartHowQuantity[idProduct] === 0) {
+            idsProductCartHowQuantity[idProduct]++; // Defina a quantidade para 1 quando o item é adicionado pela primeira vez
+            attPriceCart(product.price); // Atualiza o preço do carrinho com o preço do item
+        } else {
+            idsProductCartHowQuantity[idProduct]++; // Aumenta a quantidade se o item já estiver no carrinho
+            attPriceCart(); // Atualiza o preço do carrinho sem alterar o preço do item
+        }
+    }
+    
     atualizeQuantity(idProduct);
 }
-//remove quantity
-function removequantityProduct(idProduct){
-    idsProductCartHowQuantity[idProduct] --;
+
+// Remove quantidade de um produto no carrinho
+function removequantityProduct(idProduct) {
+    if (idsProductCartHowQuantity[idProduct] === undefined) {
+        return;
+    }
+    if (idsProductCartHowQuantity[idProduct] === 1) {
+        removecar(idProduct);
+        return;
+    }
+    idsProductCartHowQuantity[idProduct]--;
     atualizeQuantity(idProduct);
+    attPriceCart(); // Chama attPriceCart após a remoção
 }
-//atualize quantity
-function atualizeQuantity(idProduct){
-    document.getElementById(`quantity-${idProduct}`)
-    .innerText = idsProductCartHowQuantity[idProduct];
+
+// Atualiza a quantidade exibida no carrinho
+function atualizeQuantity(idProduct) {
+    document.getElementById(`quantity-${idProduct}`).innerText = idsProductCartHowQuantity[idProduct];
 }
-function designProducTonCart(){
+
+// Renderiza os produtos no carrinho
+function designProducTonCart(idProduct) {
     const product = catalog.find((p) => p.id === idProduct);
     const containerProductShopping = document.getElementById("product-car");
-    
 
     const elementArticle = document.createElement("article");
-    const articleClasses = ['flex', 'bg-slate-100','rounded-lg','p-1', 'relative'];
+    const articleClasses = ['flex', 'bg-slate-100', 'rounded-lg', 'p-1', 'relative'];
 
-   for(const articleClass of articleClasses) {
-    elementArticle.classList.add(articleClass);
-   }
+    for (const articleClass of articleClasses) {
+        elementArticle.classList.add(articleClass);
+    }
 
-    const cardProductShopping = `<button id="closed-car" class="absolute top-0 right-2">
+    const cardProductShopping = `<button id="remover-item-${product.id}" class="absolute top-0 right-2">
         <i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i>
       </button>
       <img 
@@ -75,28 +100,58 @@ function designProducTonCart(){
             </button>
       </div>`;
 
-  elementArticle.innerHTML = cardProductShopping;
-  containerProductShopping.appendChild(elementArticle);
+    elementArticle.innerHTML = cardProductShopping;
+    containerProductShopping.appendChild(elementArticle);
 
-  document.getElementById(`decrease-product-${product.id}`).addEventListener('click', () => removequantityProduct(product.id));
-  document.getElementById(`product-enhancement-${product.id}`).addEventListener('click', () => addquantityProduct(product.id));
+    document.getElementById(`decrease-product-${product.id}`).addEventListener('click', () => removequantityProduct(product.id));
+    document.getElementById(`product-enhancement-${product.id}`).addEventListener('click', () => addquantityProduct(product.id));
+
+    document.getElementById(`remover-item-${product.id}`).addEventListener('click', () => removecar(product.id));
 }
 
- function renderProductCart(){
+// Renderiza os produtos no carrinho
+function renderProductCart() {
     const containerProductShopping = document.getElementById("product-car");
     containerProductShopping.innerHTML = "";
 
-    for(const idProduct in idsProductCartHowQuantity){
+    for (const idProduct in idsProductCartHowQuantity) {
         designProducTonCart(idProduct);
     }
 }
 
- export function addItemCar (idProduct) {
+// Adiciona um item ao carrinho
+export function addItemCar(idProduct) {
     if (idProduct in idsProductCartHowQuantity) {
-        addquantityProduct(idProduct);
-        return;
+        idsProductCartHowQuantity[idProduct]++;
+    } else {
+        idsProductCartHowQuantity[idProduct] = 1;
+
+        const product = catalog.find(p => p.id === idProduct);
+        if (product) {
+            attPriceCart(product.price); // Adiciona o preço do item apenas quando ele é adicionado pela primeira vez
+        }
     }
 
-    idsProductCartHowQuantity[idProduct] = 1;
     designProducTonCart(idProduct);
+}
+
+
+
+// Calcula o preço total dos produtos no carrinho
+function attPriceCart(itemPrice = 0) {
+    const PriceCart = document.getElementById('price-all');
+    let priceAllCart = 0;
+
+    for (const idProductInCart in idsProductCartHowQuantity) {
+        const product = catalog.find(p => p.id === idProductInCart);
+        if (product) {
+            priceAllCart += product.price * idsProductCartHowQuantity[idProductInCart];
+        }
+    }
+
+    if (itemPrice !== 0) {
+        priceAllCart += itemPrice;
+    }
+
+    PriceCart.innerText = `all: $${priceAllCart.toFixed(2)}`;
 }
