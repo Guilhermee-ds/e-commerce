@@ -162,19 +162,24 @@ export function listenLocalStorage(key) {
       return JSON.parse(localStorage.getItem(key));
 }
 
+// Defina um objeto para rastrear a quantidade de cada produto no carrinho
+const cart = {};
+
+// ...
+
 export function designProducSimple(idProduct, idContainerHtml, quantityProduct) {
     const product = catalog.find((p) => p.id === idProduct);
-    const containerProductShopping = document.getElementById("container-products-checkout");
+    const containerProductShopping = document.getElementById(idContainerHtml);
 
-    // Verifique se o card já existe no carrinho
-    const existingCard = document.getElementById(`product-card-${idProduct}`);
-    
-    if (existingCard) {
-        const quantityElement = existingCard.querySelector(`#quantity-${idProduct}`);
-        quantityElement.innerText = idsProductCartHowQuantity[idProduct];
-    } else {
+        // Se o card não existe, crie um novo e defina a quantidade no carrinho
         const elementArticle = document.createElement("article");
-        const articleClasses = ['flex', 'bg-slate-100', 'rounded-lg', 'p-1', 'relative'];
+        const articleClasses = [
+            'flex', 
+            'bg-stone-200', 
+            'rounded-lg', 
+            'p-1', 
+            'relative'
+        ];
 
         for (const articleClass of articleClasses) {
             elementArticle.classList.add(articleClass);
@@ -196,12 +201,6 @@ export function designProducSimple(idProduct, idContainerHtml, quantityProduct) 
           </div>`;
 
         elementArticle.innerHTML = cardProductShopping;
-        elementArticle.id = `product-card-${idProduct}`;
         containerProductShopping.appendChild(elementArticle);
 
-        document.getElementById(`decrease-product-${product.id}`).addEventListener('click', () => removequantityProduct(product.id));
-        document.getElementById(`product-enhancement-${product.id}`).addEventListener('click', () => addquantityProduct(product.id));
-
-        document.getElementById(`remover-item-${product.id}`).addEventListener('click', () => removecar(product.id));
     }
-}
