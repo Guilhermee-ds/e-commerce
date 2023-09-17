@@ -3,8 +3,9 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/meuEcommerce/",
+  base: "/Ecomerce-Tech/",
   plugins: [],
+  base: "/e-commerce",
   resolve: {
     /*something*/
   },
