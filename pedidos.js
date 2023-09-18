@@ -1,4 +1,4 @@
-import { lerLocalStorage, desenharProdutoNoCarrinhoSimples } from "./utilidades";
+import { lerLocalStorage, desenharProdutoNoCarrinhoSimples } from "./src/utilidades";
 
 function criarPedidoHistorico(pedidoComData){
     const dataFormatada = new Date(pedidoComData.dataPedido).toLocaleDateString('pt-BR', {hour: '2-digit', minute: '2-digit'});

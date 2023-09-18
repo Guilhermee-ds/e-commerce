@@ -1,6 +1,6 @@
-import { renderizarCatalogo } from "./cartaoProduto";
-import { inicializarFiltros } from "./filtrosCatalogo";
-import { atualizarPrecoCarrinho, inicializarCarrinho, renderizarProdutosCarrinho } from "./menuCarrinho";
+import { renderizarCatalogo } from "./src/cartaoProduto";
+import { inicializarFiltros } from "./src/filtrosCatalogo";
+import { atualizarPrecoCarrinho, inicializarCarrinho, renderizarProdutosCarrinho } from "./src/menuCarrinho";
 
 
 
