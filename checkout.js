@@ -1,4 +1,4 @@
-import { apagarDoLocalStorage, desenharProdutoNoCarrinhoSimples, lerLocalStorage, salvarLocalStorage } from "./src/utilidades";
+import { apagarDoLocalStorage, desenharProdutoNoCarrinhoSimples, lerLocalStorage, salvarLocalStorage } from "./utilidades";
 
 function desenharProdutosCheckout(){
     const idsProdutoCarrinhoComQuantidade = lerLocalStorage("carrinho") ?? {};
