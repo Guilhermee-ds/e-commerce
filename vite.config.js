@@ -1,13 +1,12 @@
-import tailwindcss from "tailwindcss";
-import { resolve } from "path";
 import { defineConfig } from "vite";
+import { resolve } from "path";
+import tailwindcss from "tailwindcss";
 
 export default defineConfig({
-  base: "/Ecomerce-Tech/",
+  base: "/e-commerce/",
   plugins: [],
-  base: "/e-commerce",
   resolve: {
-    /*something*/
+    /* algo aqui */
   },
   css: {
     postcss: {
